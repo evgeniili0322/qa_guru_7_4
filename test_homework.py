@@ -82,6 +82,7 @@ def test_unique_elements():
 
 
 def test_dicts():
+    import pprint
     """
     Создайте словарь из двух списков.
     Используйте первый список как ключи, а второй - как значения.
@@ -92,6 +93,7 @@ def test_dicts():
     second = [1, 2, 3, 4, 5]
     # TODO создайте словарь
     d = dict(zip(first, second))
+    pprint.pprint(d, width=1)
 
     assert isinstance(d, dict)
     assert len(d) == 5
