@@ -9,6 +9,8 @@ def test_greeting():
     age = 25
     # TODO Сформируйте нужную строку
     output = f"Привет, {name}! Тебе {age} лет."
+    print(output)
+
     # Проверяем результат
     assert output == "Привет, Анна! Тебе 25 лет."
 
@@ -44,7 +46,8 @@ def test_circle():
     # TODO сосчитайте длину окружности
     length = 2 * math.pi * r
     assert length == 144.51326206513048
-
+    print(f"Length: {length}")
+    print(f"Area: {area}")
 
 def test_random_list():
     """
@@ -52,17 +55,7 @@ def test_random_list():
     """
 
     # TODO создайте список
-    l = []
-    l.append(random.randint(1, 100))
-    l.append(random.randint(1, 100))
-    l.append(random.randint(1, 100))
-    l.append(random.randint(1, 100))
-    l.append(random.randint(1, 100))
-    l.append(random.randint(1, 100))
-    l.append(random.randint(1, 100))
-    l.append(random.randint(1, 100))
-    l.append(random.randint(1, 100))
-    l.append(random.randint(1, 100))
+    l = random.sample(range(1, 100), 10)
     l.sort()
     assert len(l) == 10
     assert l[0] < l[-1]
@@ -82,7 +75,6 @@ def test_unique_elements():
 
 
 def test_dicts():
-    import pprint
     """
     Создайте словарь из двух списков.
     Используйте первый список как ключи, а второй - как значения.
@@ -93,7 +85,7 @@ def test_dicts():
     second = [1, 2, 3, 4, 5]
     # TODO создайте словарь
     d = dict(zip(first, second))
-    pprint.pprint(d, width=1)
+    print(d.values())
 
     assert isinstance(d, dict)
     assert len(d) == 5
